@@ -1,5 +1,5 @@
-# Arquivo onde será gerado as palavras
 
+## * Arquivo onde será gerado as palavras
 
 import random
 
