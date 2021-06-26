@@ -1,5 +1,6 @@
-from wordGenerator import wordGenerator
+from wordGenerator import wordGenerator as word
+from specialCharactersGenerator import specialCharactersGenerator as special
 
-palavra = wordGenerator.wordGenerator(6)
+palavra = str(word.wordGenerator(4) + special.specialCharactersGenerator(4))
 
 print(palavra)
