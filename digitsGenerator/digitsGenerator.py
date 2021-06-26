@@ -4,15 +4,13 @@
 import random
 import string
 
-digitos = list(string.digits)
-
-caracteresGerados = []
-
 def digitsGenerator(tamanho):
+
+    digitos = list(string.digits)
+
+    caracteresGerados = []
     for i in range(tamanho):
 
         caracteresGerados.append(random.choice(digitos))
 
     return "".join(caracteresGerados)
-
-print (digitsGenerator(5))

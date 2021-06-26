@@ -3,15 +3,15 @@
 
 import random
 
-arrayAey = ["a","e","i","o"]
-arrayLh = ["lh","nh","ch"]
-arrayBcd = ["b","c","d","f","g","j","k","l","m","n","p","r","s","t","v","x","z"]
-arrayQu = ["qua","qui","quo","que"]
-arrayLms = ["l","m","s","r"]
-
-palavra = []
-
 def wordGenerator(tamanho):
+    arrayAey = ["a","e","i","o"]
+    arrayLh = ["lh","nh","ch"]
+    arrayBcd = ["b","c","d","f","g","j","k","l","m","n","p","r","s","t","v","x","z"]
+    arrayQu = ["qua","qui","quo","que"]
+    arrayLms = ["l","m","s","r"]
+
+    palavra = []
+
     for i in range(tamanho):
         x = random.randint(1, 5)
 

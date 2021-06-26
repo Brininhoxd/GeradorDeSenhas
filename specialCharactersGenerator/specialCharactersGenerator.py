@@ -3,12 +3,12 @@
 
 import random
 
-caracteres = "!#$%&+-/<=>?@\_"
-arrayCaracteres = list(caracteres)
-
-caracteresGerados = []
-
 def specialCharactersGenerator(tamanho):
+    caracteres = "!#$%&+-/<=>?@\_"
+    arrayCaracteres = list(caracteres)
+
+    caracteresGerados = []
+
     for i in range(tamanho):
 
         caracteresGerados.append(random.choice(arrayCaracteres))
