@@ -1,8 +1,9 @@
 
-## * Arquivo onde será gerado os digitos
+# * Arquivo onde será gerado os digitos
 
 import random
 import string
+
 
 def digitsGenerator(tamanho):
 

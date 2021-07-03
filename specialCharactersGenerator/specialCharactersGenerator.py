@@ -1,10 +1,11 @@
 
-## * Arquivo onde será gerado os caracteres especiais
+# * Arquivo onde será gerado os caracteres especiais
 
 import random
 
+
 def specialCharactersGenerator(tamanho):
-    caracteres = "!#$%&+-/<=>?@\_"
+    caracteres = "!#$%&+-/<=>?@_"
     arrayCaracteres = list(caracteres)
 
     caracteresGerados = []

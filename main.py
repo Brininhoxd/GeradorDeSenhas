@@ -5,28 +5,27 @@ def imprimirMenu():
     print("Menu")
     print("")
 
+
 def validações():
 
     tmSenha = 0
 
-    while tmSenha < 8 or tmSenha > 24:
-        tmSenha = int(input("Quantos caracteres deseja na sua senha? "))
+    while tmSenha < 1 or tmSenha > 3:
+        print("Opções de tamanho de senha: ")
+        print("1 - Senha Pequena(8 caracteres) ")
+        print("2 - Senha Média(16 caracteres)")
+        print("3 - Senha Grande(24 caracteres)")
         print("")
 
-        if tmSenha < 8 or tmSenha > 24:
-            
-            print('Obs: Digite uma quantidade de caracteres entre "8" e "24". \nPara que seja segura e fácil de lembrar! ')
+        tmSenha = int(input("Escolha uma das opções acima: "))
+
+        if tmSenha < 1 or tmSenha > 3:
+
+            print('Escolha apenas uma das opções acima!')
             print("")
 
-    tamWord = tmSenha - 4
-    tamSpecial = 2
-    tamDigits = 2
+    return tmSenha
 
-    Tamanhos = { 'tamWord': tamWord,
-                    'tamSpecial': tamSpecial,
-                    'tamDigits': tamDigits}
-
-    return Tamanhos
 
 op = ""
 
@@ -36,9 +35,8 @@ while op.lower() != "s":
     qtdSenhas = int(input("Quantas senhas deseja gerar? "))
     print("")
 
-    objTamanhos = validações()
+    tamSenhas = validações()
 
-    password.gerarSenha(objTamanhos, qtdSenhas)
-    
-    
-    
+    senhas = password.gerarSenha(tamSenhas, qtdSenhas)
+
+    print(senhas)
