@@ -1,20 +1,61 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from Tela import Ui_MainWindow
+from Senha import Senha
+from pyperclip import copy
+
 
 class MainWindow:
     def __init__(self):
         self.main_win = QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
-        self.ui.hslCaracteres.valueChanged.connect(self.number_changed)
+        self.senha = Senha()
+        self.ui.hslCaracteres.valueChanged.connect(self.mudou_numero)
+        self.ui.chkLetraMaiuscula.stateChanged.connect(self.mudou_chk_maiuscula)
+        self.ui.chkLetraMinuscula.stateChanged.connect(self.mudou_chk_minuscula)
+        self.ui.chkNumero.stateChanged.connect(self.mudou_chk_numero)
+        self.ui.chkSimbolo.stateChanged.connect(self.mudou_chk_simbolo)
+        self.ui.txtSenha.isReadOnly = True
+        self.ui.btnCopy.clicked.connect(self.clicou_copiar)
+        self.ui.btnGerarSenha.clicked.connect(self.clicou_gerar)
 
     def show(self):
         self.main_win.show()
 
-    def number_changed(self):
-        new_value = str(self.ui.hslCaracteres.value())
-        self.ui.lbCaracteres.setText(f"{new_value} Caracteres" if int(new_value) > 1 else f"{new_value} Caractere")
+    def mudou_numero(self):
+        novo_valor = str(self.ui.hslCaracteres.value())
+        self.ui.lbCaracteres.setText(f"{novo_valor} Caracteres" if int(novo_valor) > 1 else f"{novo_valor} Caractere")
+    
+    def mudou_chk_maiuscula(self):
+        novo_valor = bool(self.ui.chkLetraMaiuscula.checkState())
+        self.senha.verifica_maiuscula(novo_valor)
+        print(self.senha._config_senha["maiuscula"])
+    
+    def mudou_chk_minuscula(self):
+        novo_valor = bool(self.ui.chkLetraMinuscula.checkState())
+        self.senha.verifica_minuscula(novo_valor)
+        print(self.senha._config_senha["minuscula"])
+    
+    def mudou_chk_numero(self):
+        novo_valor = bool(self.ui.chkNumero.checkState())
+        self.senha.verifica_numero(novo_valor)
+        print(self.senha._config_senha["numero"])
+    
+    def mudou_chk_simbolo(self):
+        novo_valor = bool(self.ui.chkSimbolo.checkState())
+        self.senha.verifica_simbolo(novo_valor)
+        print(self.senha._config_senha["simbolo"])
+
+    def clicou_copiar(self):
+        valor = str(self.ui.txtSenha.text())
+        copy(valor)
+
+    def clicou_gerar(self):
+        tamanho = int(self.ui.hslCaracteres.value())
+        senha = self.senha.montar_config_senha(tamanho)
+        print(senha)
+        # self.ui.txtSenha.setText(senha)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
