@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="copyIcon">
-    <file>icons/copy-icon.png</file>
-  </qresource>
-  <qresource prefix="windowIcon">
-    <file>icons/cadeado.png</file>
-  </qresource>
-</RCC>

@@ -30,22 +30,18 @@ class MainWindow:
     def mudou_chk_maiuscula(self):
         novo_valor = bool(self.ui.chkLetraMaiuscula.checkState())
         self.senha.verifica_maiuscula(novo_valor)
-        print(self.senha._config_senha["maiuscula"])
     
     def mudou_chk_minuscula(self):
         novo_valor = bool(self.ui.chkLetraMinuscula.checkState())
         self.senha.verifica_minuscula(novo_valor)
-        print(self.senha._config_senha["minuscula"])
-    
+
     def mudou_chk_numero(self):
         novo_valor = bool(self.ui.chkNumero.checkState())
         self.senha.verifica_numero(novo_valor)
-        print(self.senha._config_senha["numero"])
     
     def mudou_chk_simbolo(self):
         novo_valor = bool(self.ui.chkSimbolo.checkState())
         self.senha.verifica_simbolo(novo_valor)
-        print(self.senha._config_senha["simbolo"])
 
     def clicou_copiar(self):
         valor = str(self.ui.txtSenha.text())
@@ -53,9 +49,8 @@ class MainWindow:
 
     def clicou_gerar(self):
         tamanho = int(self.ui.hslCaracteres.value())
-        senha = self.senha.montar_config_senha(tamanho)
-        print(senha)
-        # self.ui.txtSenha.setText(senha)
+        senha = self.senha._gerar_senha(tamanho)
+        self.ui.txtSenha.setText(senha)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

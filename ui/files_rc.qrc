@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>cadeado.png</file>
+    <file>copy-icon.png</file>
+  </qresource>
+</RCC>

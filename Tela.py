@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(550, 450))
         MainWindow.setMaximumSize(QtCore.QSize(550, 450))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/windowIcon/icons/cadeado.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/icons/cadeado.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(550, 450))
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
         self.btnCopy.setToolTipDuration(0)
         self.btnCopy.setStyleSheet("QPushButton{\n"
 "    border-radius: 5px;    \n"
-"    background-image: url(:/copyIcon/icons/copy-icon.png);\n"
+"    background-image: url(:/icons/copy-icon.png);\n"
 "    background-position: center;\n"
 "    color: rgb(255, 255, 255);\n"
 "\n"
@@ -184,41 +184,10 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addItem(spacerItem7, 0, 2, 1, 1)
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem8, 1, 0, 1, 1)
-        self.chkNumero = QtWidgets.QCheckBox(self.frChk)
-        font = QtGui.QFont()
-        font.setFamily("Roboto Medium")
-        font.setPointSize(14)
-        self.chkNumero.setFont(font)
-        self.chkNumero.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.chkNumero.setAutoFillBackground(False)
-        self.chkNumero.setStyleSheet("QCheckBox{\n"
-"    color: rgb(255, 255, 255)\n"
-"}\n"
-"\n"
-"QCheckBox::indicator{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    width: 15px;\n"
-"    height: 15px;\n"
-"    border-radius: 10px;\n"
-"    background-color: rgb(135, 135, 135);\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked{\n"
-"    border: 3px solid rgb(100, 100, 100);\n"
-"    background-color: rgb(252,163,17);\n"
-"}")
-        self.chkNumero.setObjectName("chkNumero")
-        self.gridLayout_2.addWidget(self.chkNumero, 1, 1, 1, 1)
-        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_2.addItem(spacerItem9, 1, 2, 1, 1)
-        spacerItem10 = QtWidgets.QSpacerItem(163, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_2.addItem(spacerItem10, 2, 0, 1, 1)
         self.chkLetraMinuscula = QtWidgets.QCheckBox(self.frChk)
         font = QtGui.QFont()
         font.setFamily("Roboto Medium")
         font.setPointSize(14)
-        font.setBold(False)
-        font.setWeight(50)
         self.chkLetraMinuscula.setFont(font)
         self.chkLetraMinuscula.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.chkLetraMinuscula.setAutoFillBackground(False)
@@ -239,7 +208,38 @@ class Ui_MainWindow(object):
 "    background-color: rgb(252,163,17);\n"
 "}")
         self.chkLetraMinuscula.setObjectName("chkLetraMinuscula")
-        self.gridLayout_2.addWidget(self.chkLetraMinuscula, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.chkLetraMinuscula, 1, 1, 1, 1)
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem9, 1, 2, 1, 1)
+        spacerItem10 = QtWidgets.QSpacerItem(163, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem10, 2, 0, 1, 1)
+        self.chkNumero = QtWidgets.QCheckBox(self.frChk)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Medium")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.chkNumero.setFont(font)
+        self.chkNumero.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.chkNumero.setAutoFillBackground(False)
+        self.chkNumero.setStyleSheet("QCheckBox{\n"
+"    color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QCheckBox::indicator{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    width: 15px;\n"
+"    height: 15px;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(135, 135, 135);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked{\n"
+"    border: 3px solid rgb(100, 100, 100);\n"
+"    background-color: rgb(252,163,17);\n"
+"}")
+        self.chkNumero.setObjectName("chkNumero")
+        self.gridLayout_2.addWidget(self.chkNumero, 2, 1, 1, 1)
         spacerItem11 = QtWidgets.QSpacerItem(162, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem11, 2, 2, 1, 1)
         spacerItem12 = QtWidgets.QSpacerItem(163, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -308,16 +308,16 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Gerador de Senhas"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Senha Segura"))
         self.txtSenha.setPlaceholderText(_translate("MainWindow", "Sua Senha", "Sua Senha"))
         self.btnCopy.setToolTip(_translate("MainWindow", "Copiar"))
-        self.lbCaracteres.setText(_translate("MainWindow", "1 Caracter"))
+        self.lbCaracteres.setText(_translate("MainWindow", "1 Caractere"))
         self.btnGerarSenha.setText(_translate("MainWindow", "Gerar Senha"))
         self.chkLetraMaiuscula.setText(_translate("MainWindow", "Letra Maiúscula"))
-        self.chkNumero.setText(_translate("MainWindow", "Letra Minúscula"))
-        self.chkLetraMinuscula.setText(_translate("MainWindow", "Números"))
+        self.chkLetraMinuscula.setText(_translate("MainWindow", "Letra Minúscula"))
+        self.chkNumero.setText(_translate("MainWindow", "Números"))
         self.chkSimbolo.setText(_translate("MainWindow", "Símbolos"))
-import file_rc
+import files_rc
 
 
 if __name__ == "__main__":

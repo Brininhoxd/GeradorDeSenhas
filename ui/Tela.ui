@@ -26,8 +26,8 @@
    <string>Gerador de Senhas</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="file_rc.qrc">
-    <normaloff>:/windowIcon/icons/cadeado.png</normaloff>:/windowIcon/icons/cadeado.png</iconset>
+   <iconset resource="../files_rc.qrc">
+    <normaloff>:/icons/cadeado.png</normaloff>:/icons/cadeado.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
@@ -149,7 +149,7 @@ QLineEdit:hover{
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-radius: 5px;	
-	background-image: url(:/copyIcon/icons/copy-icon.png);
+	background-image: url(:/icons/copy-icon.png);
 	background-position: center;
 	color: rgb(255, 255, 255);
 
@@ -452,7 +452,7 @@ QCheckBox::indicator:checked{
            </spacer>
           </item>
           <item row="1" column="1">
-           <widget class="QCheckBox" name="chkNumero">
+           <widget class="QCheckBox" name="chkLetraMinuscula">
             <property name="font">
              <font>
               <family>Roboto Medium</family>
@@ -515,7 +515,7 @@ QCheckBox::indicator:checked{
            </spacer>
           </item>
           <item row="2" column="1">
-           <widget class="QCheckBox" name="chkLetraMinuscula">
+           <widget class="QCheckBox" name="chkNumero">
             <property name="font">
              <font>
               <family>Roboto Medium</family>
@@ -702,7 +702,7 @@ QSlider::handle:horizontal {
   </widget>
  </widget>
  <resources>
-  <include location="file_rc.qrc"/>
+  <include location="../files_rc.qrc"/>
  </resources>
  <connections/>
 </ui>

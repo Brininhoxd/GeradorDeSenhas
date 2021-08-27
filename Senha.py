@@ -1,59 +1,53 @@
+from os import replace
 from string import ascii_lowercase, ascii_uppercase, digits
 from random import choice
 
 
-config_senha = {
-    'maiuscula': False,
-    'minuscula': False,
-    'numero': False,
-    'simbolo': False
-}
-
 class Senha:
     def __init__(self):
-        self._config_senha = config_senha
-        self._caracteres_senha = []
+        self._caracteres_senha = {
+            'maiuscula': [],
+            'minuscula': [],
+            'numero': [],
+            'simbolo': []
+        }
         self._sim = '!@#$%&*^?'
         self._senha = []
     
     def verifica_maiuscula(self, maiuscula):
-        if maiuscula:
-            self._config_senha['maiuscula'] = True
+        if maiuscula == True:
+            self._caracteres_senha['maiuscula'].append(ascii_uppercase)
         else:
-            self._config_senha['maiuscula'] = False
+            self._caracteres_senha['maiuscula'].clear()
 
     def verifica_minuscula(self, minuscula):
-        if minuscula:
-            self._config_senha['minuscula'] = True
+        if minuscula == True:
+            self._caracteres_senha['minuscula'].append(ascii_lowercase)
         else:
-            self._config_senha['minuscula'] = False
+            self._caracteres_senha['minuscula'].clear()
     
     def verifica_numero(self, numero):
-        if numero:
-            self._config_senha['numero'] = True
+        if numero == True:
+            self._caracteres_senha['numero'].append(digits)
         else:
-            self._config_senha['numero'] = False
+            self._caracteres_senha['numero'].clear()
     
     def verifica_simbolo(self, simbolo):
-        if simbolo:
-            self._config_senha['simbolo'] = True
+        if simbolo == True:
+            self._caracteres_senha['simbolo'].append(self._sim)
         else:
-            self._config_senha['simbolo'] = False
-
-
-    def montar_config_senha(self, tamanho):
-        if self._config_senha['maiuscula'] == True:
-            self._caracteres_senha.append(ascii_uppercase)
-        if self._config_senha['minuscula'] == True:
-            self._caracteres_senha.append(ascii_lowercase)
-        if self._config_senha['numero'] == True:
-            self._caracteres_senha.append(digits)
-        if self._config_senha['simbolo'] == True:
-            self._caracteres_senha.append(self._sim.split())
-        
-        return self._gerar_senha(tamanho)
+            self._caracteres_senha['simbolo'].clear()
 
     def _gerar_senha(self, tamanho):
+        aux = []
+        self._senha.clear()
+
+        for valor in self._caracteres_senha.values():
+            aux.append(str(valor).strip("[]"))
+
+        aux = "".join(aux)
+        aux = aux.replace("''", "").replace("'", "")
+
         for i in range(tamanho):
-            self._senha.append(choice(self._caracteres_senha))
+            self._senha.append(choice(aux))
         return "".join(self._senha)
