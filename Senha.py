@@ -1,5 +1,5 @@
 from os import replace
-from string import ascii_lowercase, ascii_uppercase, digits
+from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from random import choice
 
 
@@ -11,7 +11,6 @@ class Senha:
             'numero': [],
             'simbolo': []
         }
-        self._sim = '!@#$%&*^?'
         self._senha = []
     
     def verifica_maiuscula(self, maiuscula):
@@ -34,7 +33,7 @@ class Senha:
     
     def verifica_simbolo(self, simbolo):
         if simbolo == True:
-            self._caracteres_senha['simbolo'].append(self._sim)
+            self._caracteres_senha['simbolo'].append(punctuation)
         else:
             self._caracteres_senha['simbolo'].clear()
 
@@ -51,3 +50,4 @@ class Senha:
         for i in range(tamanho):
             self._senha.append(choice(aux))
         return "".join(self._senha)
+
