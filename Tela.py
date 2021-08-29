@@ -309,7 +309,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Senha Segura"))
-        self.txtSenha.setPlaceholderText(_translate("MainWindow", "Sua Senha", "Sua Senha"))
+        # self.txtSenha.setPlaceholderText(_translate("MainWindow", "Sua Senha", "Sua Senha"))
+        self.txtSenha.setText("Sua Senha")
         self.btnCopy.setToolTip(_translate("MainWindow", "Copiar"))
         self.lbCaracteres.setText(_translate("MainWindow", "1 Caractere"))
         self.btnGerarSenha.setText(_translate("MainWindow", "Gerar Senha"))

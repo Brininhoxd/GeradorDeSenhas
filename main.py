@@ -45,7 +45,8 @@ class MainWindow:
 
     def clicou_copiar(self):
         valor = str(self.ui.txtSenha.text())
-        copy(valor)
+        if valor != "Sua Senha":
+            copy(valor)
 
     def clicou_gerar(self):
         tamanho = int(self.ui.hslCaracteres.value())
