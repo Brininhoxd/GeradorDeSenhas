@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from Tela import Ui_MainWindow
 from Senha import Senha
-from pyperclip import copy
+# from pyperclip import copy
 
 
 class MainWindow:
@@ -45,8 +45,8 @@ class MainWindow:
 
     def clicou_copiar(self):
         valor = str(self.ui.txtSenha.text())
-        if valor != "Sua Senha":
-            copy(valor)
+        # if valor != "Sua Senha":
+        #     copy(valor)
 
     def clicou_gerar(self):
         tamanho = int(self.ui.hslCaracteres.value())
